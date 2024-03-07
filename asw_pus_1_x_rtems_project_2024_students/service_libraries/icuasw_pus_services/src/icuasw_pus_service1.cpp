@@ -58,7 +58,7 @@ bool_t PUSService1::IsSourceIDValid(CDTCHandler &tcHandler) {
 	return isValid;
 
 }
-
+// CVamos chequeando que todo de momento es válido
 void PUSService1::TryTCAcceptation(CDTCHandler &tcHandler) {
 
 
@@ -83,23 +83,26 @@ void PUSService1::TryTCAcceptation(CDTCHandler &tcHandler) {
 
 		switch (type) {
 		//TODO TC Acceptance and TC Classification
-//		case (9):
-//
-//			switch (subtype) {
-//
-//			case (129):
-//				tcHandler.SetExecCtrlAsPrioTC();
-//				break;
-//			default:
-//				acceptationStatus = TCAcceptationSubTypeError;
-//			}
-//			break;
+		// Chequeamos que tenemos bien el 9, bien el 17. Si no, nos vamos por la rama del default
+		case (9):
+
+			switch (subtype) {
+
+			case (129):
+					//Chequeamos los subtipos. Creando switch case y si no reportamos un error
+				tcHandler.SetExecCtrlAsPrioTC();
+				break;
+			default:
+				acceptationStatus = TCAcceptationSubTypeError;
+			}
+			break;
 		case (17):
 			switch (subtype) {
 			case (1):
 					//TC Classified as PrioTC
 				tcHandler.SetExecCtrlAsPrioTC();
 				break;
+				// Si el TC que llega es 17.1 se ejecuta, si no lo que tendremos será una rutina de error
 			default:
 				acceptationStatus = TCAcceptationSubTypeError;
 			}

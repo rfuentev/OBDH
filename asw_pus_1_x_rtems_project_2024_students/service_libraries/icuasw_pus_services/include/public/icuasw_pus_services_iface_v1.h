@@ -23,11 +23,11 @@ public:
 	static void Init();
 };
 
-
+// Sirve para dar de alta a los servicios. Añade visibilidad a determinados servicios.
 #include "../../../icuasw_pus_services/include/icuasw_pus_services/icuasw_pus_service1.h"
 //TODO Add PUS Services 9 and 17 header files
-//#include "../../../icuasw_pus_services/include/icuasw_pus_services/icuasw_pus_service9.h"
-//#include "../../../icuasw_pus_services/include/icuasw_pus_services/icuasw_pus_service17.h"
+#include "../../../icuasw_pus_services/include/icuasw_pus_services/icuasw_pus_service9.h"
+#include "../../../icuasw_pus_services/include/icuasw_pus_services/icuasw_pus_service17.h"
 
 
 class PUSPrioTCExecutor {
