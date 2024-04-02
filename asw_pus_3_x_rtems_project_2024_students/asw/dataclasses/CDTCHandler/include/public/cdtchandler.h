@@ -24,6 +24,7 @@ class CDTCHandler {
 
 	friend class PUSService1;
 	friend class PUSService9;
+	// Friendship added
 	friend class PUSService3;
 	friend class PUSService17;
 

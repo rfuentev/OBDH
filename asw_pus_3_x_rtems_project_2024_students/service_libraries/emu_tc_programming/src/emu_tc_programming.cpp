@@ -16,8 +16,9 @@
 //#define FT_SOLO_EPD_ICU_SERV_1_REJECTED_TC_0030
 
 //TODO Enable service 3 test
-//#define FT_SOLO_EPD_ICU_SERV_3_DISABLE_SID0_0040
-//#define FT_SOLO_EPD_ICU_SERV_3_UPDATE_INTERVAL_TC_0050
+// Sin comentarlo lo que hacemos es activar un test para desactivar un SID
+#define FT_SOLO_EPD_ICU_SERV_3_DISABLE_SID0_0040
+#define FT_SOLO_EPD_ICU_SERV_3_UPDATE_INTERVAL_TC_0050
 
 
 #ifdef FT_SOLO_EPD_ICU_SERV_17_0010
