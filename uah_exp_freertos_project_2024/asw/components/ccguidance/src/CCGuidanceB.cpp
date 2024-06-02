@@ -68,7 +68,7 @@ bool CCGuidance::EDROOM_CTX_Top_0::EDROOMSearchContextTrans(
 
 	// User-defined Functions   ****************************
 
-void	CCGuidance::EDROOM_CTX_Top_0::FInitGuidance()()
+void	CCGuidance::EDROOM_CTX_Top_0::FInitGuidance()
 
 {
    //Define absolute time
