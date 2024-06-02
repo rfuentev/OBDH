@@ -39,6 +39,7 @@ public:
 	 */
 	 enum TEDROOMCCExplorerManagerSignal { EDROOMSignalTimeout, 
 							EDROOMSignalDestroy, 
+							SGuidance, 
 							EDROOMIRQsignal, 
 							SBKGTC, 
 							SHK_FDIR_TC, 
@@ -96,6 +97,8 @@ public:
 	//******************  Component Communication Ports *******************
 	// ********************************************************************
 
+	//! Guidance Component Port
+	CEDROOMInterface	Guidance;
 	//! BKGExecCtrl Component Port
 	CEDROOMInterface	BKGExecCtrl;
 	//! HK_FDIRCtrl Component Port
@@ -256,6 +259,7 @@ public:
 	 */
 	enum TEDROOMCCExplorerManagerSignal { EDROOMSignalTimeout,
 		EDROOMSignalDestroy,
+		SGuidance,
 		EDROOMIRQsignal,
 		SBKGTC,
 		SHK_FDIR_TC,
@@ -275,6 +279,7 @@ public:
 		CEDROOMMessage * &MsgBack;
 
 		//!Component ports
+		CEDROOMInterface & Guidance;
 		CEDROOMInterface & BKGExecCtrl;
 		CEDROOMInterface & HK_FDIRCtrl;
 		CEDROOMInterface & TMChannelCtrl;
@@ -297,6 +302,7 @@ public:
 			HandleTC_ToReboot,
 			HandleTC_FwdHK_FDIRTC,
 			HandleTC_FwdToBKGTCExec,
+			HandleTC_FwdGuidanceTC,
 			HandleTC_ExecPrioTC,
 			NewEvAction,
 			EDROOMMemoryTrans };
@@ -430,6 +436,26 @@ public:
 		 * \brief  
 		 */
 		bool	GToReboot();
+
+		/**
+		 * \brief 
+		 */
+		bool	G();
+
+		/**
+		 * \brief 
+		 */
+		bool	GFwdGuidanceTC();
+
+		/**
+		 * \brief 
+		 */
+		void	F();
+
+		/**
+		 * \brief 
+		 */
+		void	FFwdGuidanceTC();
 
 	};
 
